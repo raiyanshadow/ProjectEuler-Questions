@@ -1,10 +1,6 @@
 // Largest Palindrome Product
 
-#include <stdlib.h>
-#include <time.h>
-#include <math.h>
-#include <stdbool.h>
-#include <stdio.h>
+#include "essentials.c"
 
 void largestPalindrome(int digits);
 bool isPalindrome(long long x);
@@ -14,13 +10,12 @@ int main()
     int numDigits;
     scanf("%i", &numDigits);
 
-    float timeStart = (float) clock () / CLOCKS_PER_SEC;
+    timeStart();
 
     largestPalindrome(numDigits);
 
-    float timeEnd = (float) clock () / CLOCKS_PER_SEC;
-    float timeElapsed = timeEnd - timeStart;
-    printf("Time elapsed: %f", timeElapsed);
+    timeEnd();
+    return 0;
 }
 
 void largestPalindrome(int digits)
