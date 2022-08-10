@@ -23,15 +23,6 @@ int main()
 
     matrix = readFile(matrix, "../testcases/EulQ11.txt");
 
-    for (int i = 0; i < x; i++)
-    {
-        for (int j = 0; j < y; j++)
-        {
-            printf("%i, ", matrix[i][j]);
-        }
-        printf("\n");
-    }
-
     long long prod = matrixMaxProd(matrix, x, y, adjacentDigits);
     printf("%lli\n", prod);
 
