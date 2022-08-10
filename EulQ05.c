@@ -1,15 +1,14 @@
 // Smallest multiple
 
-#include <stdio.h>
-#include <time.h>
+#include "essentials.c"
 
 int main()
 {
-    float timeStart = (float) clock () / CLOCKS_PER_SEC;
-
     int divisibleMax;
     int check;
     scanf("%i", &divisibleMax);
+
+    timeStart();
 
     for (int i = divisibleMax; 1 == 1; i++)
     {
@@ -42,6 +41,6 @@ int main()
         }
     }
 
-    float timeEnd = (float) clock () / CLOCKS_PER_SEC;
-    printf("Time elapsed: %f", timeEnd-timeStart);
+    timeEnd();
+    return 0;
 }
