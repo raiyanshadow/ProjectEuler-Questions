@@ -16,4 +16,5 @@ int main()
     printf("%lli\n", diff);
 
     timeEnd();
+    return 0;
 }
