@@ -1,24 +1,20 @@
 // Even Fibonacci numbers
 
-
-#include <stdio.h>
-#include <time.h>
+#include "essentials.c"
 
 long int even_fib_sum(long int max);
 
 int main(void)
 {
-    float startTime = (float) clock () / CLOCKS_PER_SEC;
-    
     printf("Input positive integer: ");
     long int a; scanf("%li", &a);
+
+    timeStart();
     
     printf("Sum of all even Fibonacci numbers under %li is %li\n", a, even_fib_sum(a));
     
-    float endTime = (float) clock () / CLOCKS_PER_SEC;
-    
-    float timeElapsed = endTime - startTime;
-    printf("\nTime: %f", timeElapsed);
+    timeEnd();
+    return 0;
 }
 
 long int even_fib_sum(long int max)
