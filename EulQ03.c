@@ -1,16 +1,13 @@
 // Largest prime factor
 
-#include <stdio.h>
-#include <time.h>
-#include <stdlib.h>
-#include <math.h> 
+#include "essentials.c"
 
 int main(void)
 {
     long long x;
     scanf("%lli", &x);
 
-    float timeStart = (float) clock () / CLOCKS_PER_SEC;
+    timeStart();
 
     long long largestPrime;
 
@@ -37,7 +34,6 @@ int main(void)
 
     printf("%lli\n", largestPrime);
 
-    float timeEnd = (float) clock () / CLOCKS_PER_SEC;
-    float timeElapsed = timeEnd - timeStart;
-    printf("Time elapsed: %f\n", timeElapsed);
+    timeEnd();
+    return 0;
 }
