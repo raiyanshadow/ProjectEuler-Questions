@@ -8,6 +8,8 @@
 #ifndef ESSENTIALS_H
 #define ESSENTIALS_H
 
+#define MAX(i1, i2) (i1 > i2 ? i1 : i2)
+
 float TIME_START, TIME_END;
 
 void timeStart();
