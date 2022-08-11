@@ -1,3 +1,5 @@
+// Highly divisble triangular numbers
+
 #include "essentials.c"
 
 long long findNum(int minDivisors);
