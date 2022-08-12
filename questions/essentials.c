@@ -13,6 +13,10 @@ void timeEnd()
 
 int isPrime(long long x)
 {   
+    if (x < 2)
+    {
+        return 2;
+    }
     long long ret = 2;
     while (ret * ret <= x)
     {
@@ -45,20 +49,29 @@ int getFileLines(char *fname)
     return ret + 1;
 }
 
-int getLineLength(char *fname)
+int getLineLength(char *fname, char sep)
 {
     FILE *f = fopen(fname, "r");
     int ch = 0;
     int ret = 0;
+    char tmpsep = sep;
 
     while (ch != '\n')
     {
         ch = fgetc(f);
-        if (ch == ' ')
+        if (tmpsep == 0)
+        {
+            sep = ch;
+        }
+        if (ch == sep && ch != '\n')
         {
             ret++;
         }
     }
 
+    if (tmpsep == 0)
+    {
+        return ret;
+    }
     return ret + 1;
 }
