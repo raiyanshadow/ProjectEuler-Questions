@@ -66,7 +66,6 @@ void readFile(char *fname, int **mat)
     }
 
     fclose(f);
-    return mat;
 }
 
 void addAllDigits(int **mat, int rows, int cols, long long *ret)
