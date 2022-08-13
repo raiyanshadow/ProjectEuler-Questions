@@ -28,7 +28,7 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 
 #include <stdio.h>
 
-#define	MAXDIGITS	100		/* maximum length bignum */ 
+#define	MAXDIGITS	1000		/* maximum length bignum */ 
 
 #define PLUS		1		/* positive sign bit */
 #define MINUS		-1		/* negative sign bit */
