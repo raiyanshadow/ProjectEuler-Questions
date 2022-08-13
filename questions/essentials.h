@@ -25,6 +25,7 @@ int isPrime(long long x);
 int getFileLines(char *fname);
 int getLineLength(char *fname, char sep);
 orderedPair makePair(int x, int y);
+bignum bignum_pow(int base, int exp);
 void choose(int x, int y, bignum* ret);
 void factorial(int x, bignum *ret);
 
