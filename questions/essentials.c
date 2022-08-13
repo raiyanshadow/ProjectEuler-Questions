@@ -75,3 +75,37 @@ int getLineLength(char *fname, char sep)
     }
     return ret + 1;
 }
+
+orderedPair makePair(int x, int y)
+{
+    orderedPair pair;
+    pair.x = x;
+    pair.y = y;
+    return pair;
+}
+
+void choose(int x, int y, bignum* ret)
+{
+    bignum numerator, prod_denominator, fac_y, denominator; 
+    int_to_bignum(1, &numerator);
+    int_to_bignum(1, &denominator);
+    int_to_bignum(1, &prod_denominator);
+    int_to_bignum(1, &fac_y);
+    factorial(x, &numerator);
+    factorial(x - y, &denominator);
+    factorial(y, &fac_y);
+    multiply_bignum(&fac_y, &denominator, &prod_denominator);
+    divide_bignum(&numerator, &prod_denominator, ret);
+}
+
+void factorial(int x, bignum* ret)
+{
+    bignum multiplier, tmp;
+    int_to_bignum(1, &tmp);
+    for (int i = 1; i <= x; i++)
+    {
+        int_to_bignum(i, &multiplier);
+        multiply_bignum(&tmp, &multiplier, ret);
+        copy_bignum(ret, &tmp);
+    }
+}
