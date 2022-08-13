@@ -84,6 +84,19 @@ orderedPair makePair(int x, int y)
     return pair;
 }
 
+bignum bignum_pow(int base, int exp)
+{
+    bignum ret, tmp, bignum_base;
+    int_to_bignum(base, &tmp);
+    int_to_bignum(base, &bignum_base);
+    for (int i = 1; i < exp; i++)
+    {
+        multiply_bignum(&tmp, &bignum_base, &ret);
+        copy_bignum(&ret, &tmp);
+    }
+    return ret;
+}
+
 void choose(int x, int y, bignum* ret)
 {
     bignum numerator, prod_denominator, fac_y, denominator; 
