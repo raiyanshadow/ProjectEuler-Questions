@@ -9,11 +9,10 @@ int main()
 {
     int adjacentDigits;
     scanf("%i", &adjacentDigits);
-
     timeStart();
 
-    int x = getFileLines("../testcases/EulQ11.txt");
-    int y = getLineLength("../testcases/EulQ11.txt", ' ');
+    int x = getFileLines("../../../testcases/EulQ11.txt");
+    int y = getLineLength("../../../testcases/EulQ11.txt", ' ');
 
     int **matrix = calloc(x, sizeof(int *));
     for (int i = 0; i < x; i++)
@@ -21,7 +20,7 @@ int main()
         matrix[i] = calloc(y, sizeof(int));
     }
 
-    matrix = readFile(matrix, "../testcases/EulQ11.txt");
+    matrix = readFile(matrix, "../../../testcases/EulQ11.txt");
 
     long long prod = matrixMaxProd(matrix, x, y, adjacentDigits);
     printf("%lli\n", prod);

@@ -9,10 +9,14 @@
 
 typedef struct {
         char digits[MAXDIGITS];         /* represent the number */
-	int signbit;			/* 1 if positive, -1 if negative */ 
+		int signbit;			/* 1 if positive, -1 if negative */ 
         int lastdigit;			/* index of high-order digit */
 } bignum;
 
+
+void subtract_bignum(bignum *a, bignum *b, bignum *c);
+void zero_justify(bignum *n);
+int compare_bignum(bignum *a, bignum *b);
 
 void print_bignum(bignum *n)
 {
@@ -86,7 +90,7 @@ void copy_bignum(bignum *toCopy, bignum *toPaste)
 	toPaste->signbit = toCopy->signbit;
 }
 
-/*	c = a +-/* b;	*/
+/*	c = a +- b;	*/
 
 void add_bignum(bignum *a, bignum *b, bignum *c)
 {
@@ -287,8 +291,8 @@ void divide_bignum(bignum *a, bignum *b, bignum *c)
 {
         bignum row;                     /* represent shifted row */
         bignum tmp;                     /* placeholder bignum */
-	int asign, bsign;		/* temporary signs */
-        int i, j;                       /* counters */
+		int asign, bsign;		/* temporary signs */
+        int i;                       /* counters */
 
 	initialize_bignum(c);
 
@@ -298,7 +302,7 @@ void divide_bignum(bignum *a, bignum *b, bignum *c)
 	bsign = b->signbit;
 
 	a->signbit = PLUS;
-        b->signbit = PLUS;
+    b->signbit = PLUS;
 
 	initialize_bignum(&row);
 	initialize_bignum(&tmp);
