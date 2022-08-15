@@ -3,6 +3,7 @@
 #include "essentials.c"
 
 int amicableSum(int upTo);
+int seenIn(int val, int *arr, int size);
 
 int main()
 {   
@@ -20,8 +21,14 @@ int main()
 int amicableSum(int upTo)
 {
     int ret = 0;
+    int *seen = (int *) calloc(1, sizeof(int));
+    int size = 0;
     for (int i = 2; i < upTo; i++)
     {
+        if (seenIn(i, seen, size))
+        {
+            continue;
+        }
         int properSum = 0;
         // optimize so it only searches through prime factors
         // other factor can be gotten by dividing the number by the prime factors
@@ -53,8 +60,26 @@ int amicableSum(int upTo)
         if (tmp == i && tmp != properSum)
         {
             ret += properSum + i;
+            size++;
+            seen = (int *) realloc(seen, size * sizeof(int));
+            seen[size - 1] = properSum;
         }
     }
 
-    return ret / 2;
+    free(seen);
+
+    return ret;
+}
+
+int seenIn(int val, int *arr, int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        if (val == arr[i])
+        {
+            return 1;
+        }
+    }
+
+    return 0;
 }
