@@ -22,7 +22,7 @@ double TIME_START, TIME_END;
 void timeStart();
 void timeEnd();
 int isPrime(long long x);
-void printMatrix(int **matrix);
+void printDynamicMatrix(int **matrix, int rows, int* modifiedCols);
 int getFileLines(char *fname);
 int getLineLength(char *fname, char sep, int lineNum);
 orderedPair makePair(int x, int y);
