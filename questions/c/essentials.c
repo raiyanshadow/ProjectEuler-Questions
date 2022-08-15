@@ -29,6 +29,19 @@ int isPrime(long long x)
     return 1;
 }
 
+void printDynamicMatrix(int **matrix, int rows, int* modifiedCols) {
+  int i, j;
+    for (i = 0; i < rows; i++) 
+    {
+        for (j = 0; j < modifiedCols[i]; j++)
+        {
+            printf("%d ", matrix[i][j]);
+            
+        }
+        printf("\n");
+    }  
+}
+
 int getFileLines(char *fname)
 {
     FILE *f = fopen(fname, "r");
@@ -49,25 +62,40 @@ int getFileLines(char *fname)
     return ret + 1;
 }
 
-int getLineLength(char *fname, char sep)
+int getLineLength(char *fname, char sep, int lineNum)
 {
     FILE *f = fopen(fname, "r");
     int ch = 0;
     int ret = 0;
     char tmpsep = sep;
 
-    while (ch != '\n')
+    if (lineNum != 1)
+    {
+        for (int i = 0; i < lineNum - 1; )
+        {
+            ch = fgetc(f);
+            if (ch == '\n')
+            {
+                i++;
+            }
+        }
+        ch = fgetc(f);
+    }
+
+    while (ch != '\n' && ch != EOF)
     {
         ch = fgetc(f);
         if (tmpsep == 0)
         {
             sep = ch;
         }
-        if (ch == sep && ch != '\n')
+        if (ch == sep && ch != '\n' && ch != EOF)
         {
             ret++;
         }
     }
+    
+    fclose(f);
 
     if (tmpsep == 0)
     {
@@ -121,4 +149,14 @@ void factorial(int x, bignum* ret)
         multiply_bignum(&tmp, &multiplier, ret);
         copy_bignum(ret, &tmp);
     }
+}
+
+int *arrCopy(int *toCopy, int size)
+{
+    int *ret = (int *) calloc(size, sizeof(int));
+    for (int i = 0; i < size; i++)
+    {
+        ret[i] = toCopy[i];
+    }
+    return ret;
 }

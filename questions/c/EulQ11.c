@@ -12,7 +12,7 @@ int main()
     timeStart();
 
     int x = getFileLines("../../../testcases/EulQ11.txt");
-    int y = getLineLength("../../../testcases/EulQ11.txt", ' ');
+    int y = getLineLength("../../../testcases/EulQ11.txt", ' ', 1);
 
     int **matrix = calloc(x, sizeof(int *));
     for (int i = 0; i < x; i++)

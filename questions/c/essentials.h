@@ -17,16 +17,18 @@ typedef struct orderedPair {
 
 #define MAX(i1, i2) (i1 > i2 ? i1 : i2)
 
-float TIME_START, TIME_END;
+double TIME_START, TIME_END;
 
 void timeStart();
 void timeEnd();
 int isPrime(long long x);
+void printMatrix(int **matrix);
 int getFileLines(char *fname);
-int getLineLength(char *fname, char sep);
+int getLineLength(char *fname, char sep, int lineNum);
 orderedPair makePair(int x, int y);
 bignum bignum_pow(int base, int exp);
 void choose(int x, int y, bignum* ret);
 void factorial(int x, bignum *ret);
+int *arrCopy(int *toCopy, int size);
 
 #endif

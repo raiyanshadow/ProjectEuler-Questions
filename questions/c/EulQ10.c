@@ -31,16 +31,3 @@ long long primeSums(long long x)
 
     return ret;
 }
-
-int isPrime(long long x)
-{
-    for (long long i = 2; i <= sqrt(x); i++)
-    {
-        if (x % i == 0)
-        {
-            return 0;
-        }
-    }
-
-    return 1;
-}

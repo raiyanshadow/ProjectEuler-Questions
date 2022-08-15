@@ -1,5 +1,4 @@
 // Number letter counts
-// Perhaps not the best program, but it gets the job done
 
 #include "essentials.c"
 
@@ -13,9 +12,9 @@ int main()
     int upTo;
     scanf("%i", &upTo);
     timeStart();           
-    if (upTo <= 0 || upTo > 9999)
+    if (upTo < 0 || upTo > 9999)
     {
-        printf("Number exceeds limit\nEnter a positive integer less than 10 000\n");
+        printf("Number exceeds limit \nEnter a positive number less than 10 000\n");
         return -1;
     }
     long long letterCount = letterToNumberCount(upTo);

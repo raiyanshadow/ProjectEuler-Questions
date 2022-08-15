@@ -1,22 +1,4 @@
-#include <stdio.h>
-
-#define	MAXDIGITS	 1000			/* maximum length bignum */ 
-
-#define PLUS		 1			/* positive sign bit */
-#define MINUS		-1			/* negative sign bit */
-
-#define MAX(i1, i2) (i1 > i2 ? i1 : i2)		/* return larger value */
-
-typedef struct {
-        char digits[MAXDIGITS];         /* represent the number */
-		int signbit;			/* 1 if positive, -1 if negative */ 
-        int lastdigit;			/* index of high-order digit */
-} bignum;
-
-
-void subtract_bignum(bignum *a, bignum *b, bignum *c);
-void zero_justify(bignum *n);
-int compare_bignum(bignum *a, bignum *b);
+#include "bignum.h"
 
 void print_bignum(bignum *n)
 {
