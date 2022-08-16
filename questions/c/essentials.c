@@ -166,7 +166,7 @@ void bignumIntAdd(int i, int j, bignum *c)
     bignum a, b;
     int_to_bignum(i, &a);
     int_to_bignum(j, &b);
-    add_bignum(&a, &b, &c);
+    add_bignum(&a, &b, c);
 }
 
 void bignumIntSubtract(int i, int j, bignum *c)
@@ -174,7 +174,7 @@ void bignumIntSubtract(int i, int j, bignum *c)
     bignum a, b;
     int_to_bignum(i, &a);
     int_to_bignum(j, &b);
-    subtract_bignum(&a, &b, &c);
+    subtract_bignum(&a, &b, c);
 }
 
 void bignumIntMultiply(int i, int j, bignum *c)
@@ -182,7 +182,7 @@ void bignumIntMultiply(int i, int j, bignum *c)
     bignum a, b;
     int_to_bignum(i, &a);
     int_to_bignum(j, &b);
-    multiply_bignum(&a, &b, &c);
+    multiply_bignum(&a, &b, c);
 }
 
 void bignumIntDivide(int i, int j, bignum *c)
@@ -190,5 +190,5 @@ void bignumIntDivide(int i, int j, bignum *c)
     bignum a, b;
     int_to_bignum(i, &a);
     int_to_bignum(j, &b);
-    divide_bignum(&a, &b, &c);
+    divide_bignum(&a, &b, c);
 }
