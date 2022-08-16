@@ -4,36 +4,39 @@
 
 #define LENMAX 128
 
-int *strToIntArr(char *c);
+int *strToIntArr(char *fname, int size);
 void findHighestAdjacentProduct(int *arr, int adj, int size);
 
 int main()
 {
     int adjacentDigits;
     scanf("%i", &adjacentDigits);
-    char *str;
-    scanf("%as", &str);
 
     timeStart();
 
-    int *digits = strToIntArr(str);
-    findHighestAdjacentProduct(digits, adjacentDigits, strlen(str));
+    int len = getLineLength("../../../testcases/EulQ08.txt", 0, 1);
+    int *digits = strToIntArr("../../../testcases/EulQ08.txt", len);
+    findHighestAdjacentProduct(digits, adjacentDigits, len);
 
     timeEnd();
     free(digits);
     return 0;
 }
 
-int *strToIntArr(char *c)
+int *strToIntArr(char *fname, int size)
 {
-    int size = strlen(c);
     int *ret = malloc(size * sizeof(int));
+    FILE *f = fopen(fname, "r");
+    int ch = 0, i = 0;
 
-    for (int i = 0; i < size; i++)
+    while (ch != EOF)
     {
-        ret[i] = c[i] - 48;
+        ch = fgetc(f);
+        ret[i] = ch - 48;
+        i++;
     }
 
+    fclose(f);
     return ret;
 }
 
