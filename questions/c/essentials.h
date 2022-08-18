@@ -27,12 +27,13 @@ int getFileLines(char *fname);
 int getLineLength(char *fname, char sep, int lineNum);
 orderedPair makePair(int x, int y);
 bignum bignum_pow(int base, int exp);
-void choose(int x, int y, bignum* ret);
+void choose(int x, int y, bignum *ret);
 void factorial(int x, bignum *ret);
 int *arrCopy(int *toCopy, int size);
 void bignumIntAdd(int i, int j, bignum *c);
 void bignumIntSubtract(int i, int j, bignum *c);
 void bignumIntMultiply(int i, int j, bignum *c);
 void bignumIntDivide(int i, int j, bignum *c);
+int seenIn(int val, int *arr, int size);
 
 #endif

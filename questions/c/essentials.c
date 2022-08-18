@@ -120,7 +120,7 @@ bignum bignum_pow(int base, int exp)
     for (int i = 1; i < exp; i++)
     {
         multiply_bignum(&tmp, &bignum_base, &ret);
-        copy_bignum(&ret, &tmp);
+        tmp = ret;
     }
     return ret;
 }
@@ -191,4 +191,17 @@ void bignumIntDivide(int i, int j, bignum *c)
     int_to_bignum(i, &a);
     int_to_bignum(j, &b);
     divide_bignum(&a, &b, c);
+}
+
+int seenIn(int val, int *arr, int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        if (val == arr[i])
+        {
+            return 1;
+        }
+    }
+
+    return 0;
 }
