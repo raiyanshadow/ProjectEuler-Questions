@@ -18,8 +18,12 @@ int main(void)
     }
 
     // every composite number has a prime factor less than or equal to its square root
-    for (int i = 3; i <= sqrt(x); i += 2)
+    for (int i = 3; i <= sqrt(x); i++)
     {
+        if (!isPrime(i))
+        {
+            continue;
+        }
         while (x % i == 0)
         {
             largestPrime = i;
@@ -27,12 +31,7 @@ int main(void)
         }
     }
 
-    if (x > 2)
-    {
-        printf("%lli\n", x);
-    }
-
-    printf("%lli\n", largestPrime);
+    printf("%lli\n", x);
 
     timeEnd();
     return 0;
