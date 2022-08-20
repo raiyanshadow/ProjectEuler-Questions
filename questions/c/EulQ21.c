@@ -3,7 +3,7 @@
 #include "essentials.c"
 
 int amicableSum(int upTo);
-int seenIn(int val, int *arr, int size);
+int intSeenIn(int val, int *arr, int size);
 
 int main()
 {   
@@ -25,7 +25,7 @@ int amicableSum(int upTo)
     int size = 0;
     for (int i = 2; i < upTo; i++)
     {
-        if (seenIn(i, seen, size))
+        if (intSeenIn(i, seen, size))
         {
             continue;
         }

@@ -37,6 +37,7 @@ void largestPalindrome(int digits)
             if (prod > ret && isPalindrome(prod) == true)
             {
                 ret = prod;
+                break;
             }
         }
     }

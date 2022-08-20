@@ -34,6 +34,6 @@ void bignumIntAdd(int i, int j, bignum *c);
 void bignumIntSubtract(int i, int j, bignum *c);
 void bignumIntMultiply(int i, int j, bignum *c);
 void bignumIntDivide(int i, int j, bignum *c);
-int seenIn(int val, int *arr, int size);
+int seenIn(int val, long long *arr, int size);
 
 #endif

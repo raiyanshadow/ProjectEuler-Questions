@@ -10,7 +10,7 @@ int main()
 
     timeStart();
 
-    for (int i = divisibleMax; 1 == 1; i++)
+    for (long long i = divisibleMax; 1 == 1; i++)
     {
         if (check == 1)
         {
@@ -26,7 +26,7 @@ int main()
                     check = 1;
                     if (j == divisibleMax)
                     {
-                        printf("%i\n", i);
+                        printf("%lli\n", i);
                     }
                 }
                 else

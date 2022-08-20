@@ -193,7 +193,7 @@ void bignumIntDivide(int i, int j, bignum *c)
     divide_bignum(&a, &b, c);
 }
 
-int seenIn(int val, int *arr, int size)
+int seenIn(int val, long long *arr, int size)
 {
     for (int i = 0; i < size; i++)
     {
