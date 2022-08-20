@@ -1,3 +1,5 @@
+# Largest Palindrome Product
+
 import timeit as t
 
 def largest_palindrome_prod(digits):

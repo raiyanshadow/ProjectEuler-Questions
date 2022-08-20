@@ -1,10 +1,11 @@
+# Largest prime factor
+
 import timeit as t
 import math as m
 
 def highest_prime_fac(x):
     i = 2
     factors = []
-    highest_prime = 0
     while i * i <= x:
         if x % i:
             i += 1
