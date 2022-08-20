@@ -1,3 +1,5 @@
+// Pandigital products
+
 #include "essentials.c"
 
 #define SIZE 10
