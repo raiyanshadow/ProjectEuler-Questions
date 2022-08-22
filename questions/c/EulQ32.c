@@ -44,7 +44,6 @@ int main()
 
     for (int i = 0; i < size - 1; i++)
     {
-        printf("%lli\n", unusuals[i]);
         ret += unusuals[i];
     }
 
