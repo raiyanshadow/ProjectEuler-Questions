@@ -16,6 +16,7 @@ typedef struct orderedPair {
 } orderedPair;
 
 #define MAX(i1, i2) (i1 > i2 ? i1 : i2)
+#define MIN(i1, i2) (i1 < i2 ? i1 : i1)
 
 double TIME_START, TIME_END;
 
@@ -35,5 +36,6 @@ void bignumIntSubtract(int i, int j, bignum *c);
 void bignumIntMultiply(int i, int j, bignum *c);
 void bignumIntDivide(int i, int j, bignum *c);
 int seenIn(int val, long long *arr, int size);
+bool equalPairs(orderedPair a, orderedPair b);
 
 #endif

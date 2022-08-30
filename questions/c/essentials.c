@@ -205,3 +205,12 @@ int seenIn(int val, long long *arr, int size)
 
     return 0;
 }
+
+bool equalPairs(orderedPair a, orderedPair b)
+{
+    if (a.x == b.x && a.y == b.y)
+    {
+        return true;
+    }
+    return false;
+}
