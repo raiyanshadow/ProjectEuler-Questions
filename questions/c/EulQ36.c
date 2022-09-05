@@ -23,12 +23,6 @@ int main()
             decimalToBinary(i, bin, binLen);
             if (isBinaryPalindrome(bin, binLen))
             {
-                printf("found: %i    |    binary: ", i);
-                for (int i = 0; i < binLen; i++)
-                {
-                    printf("%i", bin[i]);
-                }
-                printf("\n");
                 ret += i;
             }
             free(bin);
