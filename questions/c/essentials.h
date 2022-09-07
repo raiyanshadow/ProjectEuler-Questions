@@ -5,6 +5,7 @@
 #include <time.h>
 #include <stdbool.h>
 #include <limits.h>
+#include <stdint.h>
 #include "bignum.c"
 
 #ifndef ESSENTIALS_H
