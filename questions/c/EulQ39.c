@@ -4,8 +4,6 @@
 
 #include "essentials.c"
 
-float findHyp(int leg1, int leg2);
-
 int main()
 {
     timeStart();
