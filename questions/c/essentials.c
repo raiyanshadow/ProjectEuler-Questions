@@ -214,3 +214,40 @@ bool equalPairs(orderedPair a, orderedPair b)
     }
     return false;
 }
+
+bool isPandigital(long long x, int digitLen)
+{
+    digitLen++;
+    long long copy = x;
+    int* check = (int*)calloc(digitLen, sizeof(int));
+    while (copy != 0)
+    {
+        int num = copy % 10;
+        if (num <= digitLen - 1)
+        {
+            check[num]++;
+            copy /= 10;
+        }
+        else
+        {
+            free(check);
+            return false;
+        }
+    }
+
+    for (int i = 1; i < digitLen; i++)
+    {
+        if (check[i] != 1)
+        {
+            free(check);
+            return false;
+        }
+    }
+    free(check);
+    return true;
+}
+
+int noDigits(long long x)
+{
+    return (floor(log10(x)) + 1);
+}

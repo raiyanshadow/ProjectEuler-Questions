@@ -2,10 +2,6 @@
 
 #include "essentials.c"
 
-int check[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-
-bool isPandigital(long long x);
-
 int main()
 {
     timeStart();
@@ -22,37 +18,13 @@ int main()
     for (int i = 9487; i >= 9213; i--)
     {
         long long ret = 100000*i + 2*i;
-        if (isPandigital(ret))
+        if (isPandigital(ret, 10))
         {
             printf("%lli\n", ret);
             timeEnd();
             return 0;
         }
-        for (int i = 1; i < 10; i++)
-        {
-            check[i] = 0;
-        }
     }
     
     timeEnd();
-}
-
-bool isPandigital(long long x)
-{
-    long long copy = x;
-    while (copy != 0)
-    {
-        check[(copy % 10)]++;
-        copy /= 10;
-    }
-
-    for (int i = 1; i < 10; i++)
-    {
-        if (check[i] != 1)
-        {
-            return false;
-        }
-    }
-
-    return true;
 }
