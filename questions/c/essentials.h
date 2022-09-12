@@ -38,6 +38,6 @@ void bignumIntMultiply(int i, int j, bignum *c);
 void bignumIntDivide(int i, int j, bignum *c);
 int seenIn(int val, long long *arr, int size);
 bool equalPairs(orderedPair a, orderedPair b);
-bool isPandigital(long long x, int digitLen);
+bool isPandigital(long long x, int digitLen, bool includeZero);
 
 #endif
