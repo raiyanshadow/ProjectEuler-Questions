@@ -18,7 +18,7 @@ int main()
     for (int i = 9487; i >= 9213; i--)
     {
         long long ret = 100000*i + 2*i;
-        if (isPandigital(ret, 10))
+        if (isPandigital(ret, 10, false))
         {
             printf("%lli\n", ret);
             timeEnd();
