@@ -71,7 +71,7 @@ int amicableSum(int upTo)
     return ret;
 }
 
-int seenIn(int val, int *arr, int size)
+int intSeenIn(int val, int *arr, int size)
 {
     for (int i = 0; i < size; i++)
     {

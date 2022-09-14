@@ -63,8 +63,7 @@ long long findFactors(long long n)
             - Return N
     */
 
-    long long *primeFactors = (long long*)calloc(1, sizeof(long long));                                 // pointer to store factors
-    long long previous = n;                                     
+    long long *primeFactors = (long long*)calloc(1, sizeof(long long));                                 // pointer to store factors                                     
     int max = 0;                                                                                        // tracks size of pointer
                         
     while (isPrime(n) == 0)                                                                             // while n is not prime, so stop when n becomes prime
@@ -78,7 +77,6 @@ long long findFactors(long long n)
                     primeFactors[max] = i;                                                              // if yes, then that is one of the prime factors
                     max++;
                     primeFactors = (long long*)realloc(primeFactors, (max + 1) * sizeof(long long));
-                    previous = n;
                     n /= i;                                                                             // divide n by i and continue to find more prime factors
                     break;                                                                              // break since we found a prime factor already
                 }
