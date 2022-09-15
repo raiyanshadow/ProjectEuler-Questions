@@ -4,7 +4,7 @@
 // We can easily solve this problem using modular exponentiation
 // We want to find the last 10 digits of the end result, which is equal to number % 1e10
 // We know that (ab) mod p = ((a mod p) * (b mod p)) mod p
-// So (n^n) mod p = (...(((((n mod p) * (n mod p)) mod p * ... )...)) * (n mod p)) mod p) mod p) mod p
+// So (n^n) mod p = (...(((((n mod p) * (n mod p)) mod p * ... )...)) * (n mod p)) mod p) mod p
 // Using a product series, everytime we multiply n by itself, we check the modulus of it
 // So then we can take the product series of our self power sum and utilize modular exponentiation to correct any overflow issues
 
