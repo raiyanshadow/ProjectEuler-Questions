@@ -114,7 +114,13 @@ orderedPair makePair(int x, int y)
 
 bignum bignum_pow(int base, int exp)
 {
-    bignum ret, tmp, bignum_base;
+    bignum ret;
+    if (base == 1 || exp == 0)
+    {
+        int_to_bignum(1, &ret);
+        return ret;
+    }
+    bignum tmp, bignum_base;
     int_to_bignum(base, &tmp);
     int_to_bignum(base, &bignum_base);
     for (int i = 1; i < exp; i++)
