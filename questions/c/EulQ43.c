@@ -1,4 +1,5 @@
 // Sub-string divisibility
+// Permutation functions gotten from question 23
 
 #include "essentials.c"
 
