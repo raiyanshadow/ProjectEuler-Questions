@@ -17,7 +17,7 @@ typedef struct orderedPair {
 } orderedPair;
 
 #define MAX(i1, i2) (i1 > i2 ? i1 : i2)
-#define MIN(i1, i2) (i1 < i2 ? i1 : i1)
+#define MIN(i1, i2) (i1 < i2 ? i1 : i2)
 
 double TIME_START, TIME_END;
 
