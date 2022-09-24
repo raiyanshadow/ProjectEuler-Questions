@@ -261,3 +261,8 @@ int noDigits(long long x)
 {
     return (floor(log10(x)) + 1);
 }
+
+int cmpfunc (const void * a, const void * b) 
+{
+   return ( *(int*)a - *(int*)b );
+}

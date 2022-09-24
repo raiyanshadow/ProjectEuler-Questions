@@ -39,5 +39,7 @@ void bignumIntDivide(int i, int j, bignum *c);
 int seenIn(int val, long long *arr, int size);
 bool equalPairs(orderedPair a, orderedPair b);
 bool isPandigital(long long x, int digitLen, bool includeZero);
+int noDigits(long long x);
+int cmpfunc (const void * a, const void * b);
 
 #endif
