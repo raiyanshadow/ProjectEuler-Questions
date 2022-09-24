@@ -266,3 +266,32 @@ int cmpfunc (const void * a, const void * b)
 {
    return ( *(int*)a - *(int*)b );
 }
+
+unsigned long long reverseNum(long long x)
+{
+    int len = noDigits(x);
+    unsigned long long flux = (long long)pow(10, (len - 1));
+    unsigned long long copy = x;
+    unsigned long long ret = 0;
+    unsigned long long magnitude = 1;
+    while (copy)
+    {
+        ret += (copy / flux) * magnitude;
+        copy %= flux;
+        flux /= 10;
+        magnitude *= 10;
+    }
+    return ret;
+}
+
+bool isPalindrome(long long x)
+{
+    long long copy = 0, tmpcopy = x;
+    while (x != 0)
+    {
+        copy = copy * 10 + x % 10;
+        x /= 10;
+    }
+
+    return (tmpcopy == copy);
+}

@@ -41,5 +41,7 @@ bool equalPairs(orderedPair a, orderedPair b);
 bool isPandigital(long long x, int digitLen, bool includeZero);
 int noDigits(long long x);
 int cmpfunc (const void * a, const void * b);
+unsigned long long reverseNum(long long x);
+bool isPalindrome(long long x);
 
 #endif
