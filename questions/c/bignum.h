@@ -4,7 +4,7 @@
 #ifndef BIGNUM_H
 #define BIGNUM_H
 
-#define	MAXDIGITS	 200			/* maximum length bignum */ 
+#define	MAXDIGITS	 500			/* maximum length bignum */ 
 
 #define PLUS		 1			/* positive sign bit */
 #define MINUS		-1			/* negative sign bit */
