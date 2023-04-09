@@ -8,16 +8,16 @@ int findRoute(int **pyramid, int rows, int *adjustCols);
 int main()
 {
     timeStart();
-    int rows = getFileLines("../../../testcases/EulQ18.txt");
+    int rows = getFileLines("../../testcases/EulQ18.txt");
     int *pyramidLineLen = (int *) calloc(rows, sizeof(int));
 
     for (int k = 0; k < rows; k++)
     {
-        int lineLen = getLineLength("../../../testcases/EulQ18.txt", ' ', k + 1);
+        int lineLen = getLineLength("../../testcases/EulQ18.txt", ' ', k + 1);
         pyramidLineLen[k] = lineLen;
     }
 
-    int **pyramid = writeFileLine("../../../testcases/EulQ18.txt", rows, pyramidLineLen);
+    int **pyramid = writeFileLine("../../testcases/EulQ18.txt", rows, pyramidLineLen);
     int route = findRoute(pyramid, rows, pyramidLineLen);
     printf("%i\n", route);
 

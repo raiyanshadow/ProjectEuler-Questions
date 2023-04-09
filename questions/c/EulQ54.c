@@ -19,7 +19,7 @@ int cardVal(char ch);
 int main()
 {
     timeStart();
-    char *fname = "../../../testcases/EulQ54.txt";
+    char *fname = "../../testcases/EulQ54.txt";
     int deals = getFileLines(fname);
     char ***p1 = (char ***)calloc(deals, sizeof(char **));
     char ***p2 = (char ***)calloc(deals, sizeof(char **));

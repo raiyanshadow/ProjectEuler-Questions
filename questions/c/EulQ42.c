@@ -21,7 +21,7 @@ int main()
 {
     timeStart();
 
-    char *fname = "../../../testcases/EulQ42.txt";
+    char *fname = "../../testcases/EulQ42.txt";
     int ret = findTriangles(fname);
     printf("%i\n", ret);
 

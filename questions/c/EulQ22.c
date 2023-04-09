@@ -11,7 +11,7 @@ int main()
 {
     timeStart();
 
-    int numNames = getLineLength("../../../testcases/EulQ22.txt", ',', 1);
+    int numNames = getLineLength("../../testcases/EulQ22.txt", ',', 1);
     char **stringArr = (char **) malloc(numNames * sizeof(char *));
 
     for (int i = 0; i < numNames; i++)
@@ -19,7 +19,7 @@ int main()
         stringArr[i] = (char *) malloc(1 * sizeof(char));
     }
 
-    makeStringArr("../../../testcases/EulQ22.txt", stringArr);
+    makeStringArr("../../testcases/EulQ22.txt", stringArr);
     string_sort(stringArr, numNames, lexicogaphicSort);
 
     long long sum = nameScoreSum(stringArr, numNames);

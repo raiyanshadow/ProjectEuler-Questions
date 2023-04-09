@@ -56,7 +56,6 @@ int getFileLines(char *fname)
             ret++;
         }
     }
-
     fclose(f);
 
     return ret + 1;
@@ -94,7 +93,6 @@ int getLineLength(char *fname, char sep, int lineNum)
             ret++;
         }
     }
-    
     fclose(f);
 
     if (tmpsep == 0)
@@ -210,6 +208,77 @@ int seenIn(int val, long long *arr, int size)
     }
 
     return 0;
+}
+
+bool charsSeenIn(char* val, int *arr, int arrsize, int valsize)
+{
+    bool flag = true;
+    int tmp = 0;
+    tmp = valsize;
+    int pos = 0;
+    for (int i = 0; i < arrsize; i++)
+    {
+        if (valsize == 0)
+        {
+            return true;
+        }
+        if (val[pos] == arr[i])
+        {
+            if (arrsize - i >= valsize)
+            {
+                valsize--;
+                pos++;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            valsize = tmp;
+            pos = 0;
+        }
+    }
+
+    return false;
+}
+
+int noCharsSeenIn(char* val, int *arr, int arrsize, int valsize)
+{
+    int ret = 0;
+    bool flag = true;
+    int tmp = 0;
+    tmp = valsize;
+    int pos = 0;
+    for (int i = 0; i < arrsize; i++)
+    {
+        if (valsize == 0)
+        {
+            ret++;
+            valsize = tmp;
+            pos = 0;
+        }
+        if (val[pos] == arr[i])
+        {
+            if (arrsize - i >= valsize)
+            {
+                valsize--;
+                pos++;
+            }
+            else
+            {
+                return ret;
+            }
+        }
+        else
+        {
+            valsize = tmp;
+            pos = 0;
+        }
+    }
+
+    return ret;
 }
 
 bool equalPairs(orderedPair a, orderedPair b)

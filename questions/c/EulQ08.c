@@ -14,8 +14,8 @@ int main()
 
     timeStart();
 
-    int len = getLineLength("../../../testcases/EulQ08.txt", 0, 1);
-    int *digits = strToIntArr("../../../testcases/EulQ08.txt", len);
+    int len = getLineLength("../../testcases/EulQ08.txt", 0, 1);
+    int *digits = strToIntArr("../../testcases/EulQ08.txt", len);
     findHighestAdjacentProduct(digits, adjacentDigits, len);
 
     timeEnd();

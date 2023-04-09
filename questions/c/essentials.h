@@ -37,6 +37,8 @@ void bignumIntSubtract(int i, int j, bignum *c);
 void bignumIntMultiply(int i, int j, bignum *c);
 void bignumIntDivide(int i, int j, bignum *c);
 int seenIn(int val, long long *arr, int size);
+bool charsSeenIn(char* val, int *arr, int arrsize, int valsize);
+int noCharsSeenIn(char* val, int *arr, int arrsize, int valsize);
 bool equalPairs(orderedPair a, orderedPair b);
 bool isPandigital(long long x, int digitLen, bool includeZero);
 int noDigits(long long x);

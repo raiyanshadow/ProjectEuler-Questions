@@ -15,8 +15,8 @@ int main()
 
     timeStart();
 
-    int x = getFileLines("../../../testcases/EulQ13.txt");
-    int y = getLineLength("../../../testcases/EulQ13.txt", 0, 1);
+    int x = getFileLines("../../testcases/EulQ13.txt");
+    int y = getLineLength("../../testcases/EulQ13.txt", 0, 1);
 
     int **nums = (int **) calloc(x, sizeof(int *));
     for (unsigned int i = 0; i < x; i++)
@@ -25,7 +25,7 @@ int main()
     }
 
     long long *sums = (long long *) calloc(y, sizeof(long long));
-    readFile("../../../testcases/EulQ13.txt", nums);
+    readFile("../../testcases/EulQ13.txt", nums);
     addAllDigits(nums, x, y, sums);
 
     int re = floor(log10(sums[0])) + 1;
