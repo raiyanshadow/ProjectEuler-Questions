@@ -210,6 +210,18 @@ int seenIn(int val, long long *arr, int size)
     return 0;
 }
 
+int posSeenIn(int val, long long *arr, int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        if (val == arr[i])
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+
 bool charsSeenIn(char* val, int *arr, int arrsize, int valsize)
 {
     bool flag = true;
@@ -363,4 +375,53 @@ bool isPalindrome(long long x)
     }
 
     return (tmpcopy == copy);
+}
+
+int sieve(long long** primes, int n)
+{
+    long long *set = malloc((n+1)*sizeof(long long));
+
+    for (int i = 2; i <= n; i++)
+    {
+        set[i] = i;
+    }
+
+    int a = 2;
+    while ((a*a) <= n)
+    {
+        if (set[a] != 0)
+        {
+            for (int i = 2; i < n; i++)
+            {
+                if (set[a]*i > n)
+                {
+                    break;
+                }
+                else
+                {
+                    set[set[a]*i] = 0;
+                }
+            }
+        }
+        a++;
+    }
+    int size = 0;
+    for (int i = 2; i <= n; i++)
+    {
+        if (set[i] != 0)
+        {
+            size++;
+        }
+    }
+    *primes = realloc(*primes, size*sizeof(long long));
+    a = 0;
+    for (int i = 2; i <= n; i++)
+    {
+        if (set[i] != 0)
+        {
+            (*primes)[a] = i;
+            a++;
+        }
+    }
+    return size;
 }

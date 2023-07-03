@@ -37,6 +37,7 @@ void bignumIntSubtract(int i, int j, bignum *c);
 void bignumIntMultiply(int i, int j, bignum *c);
 void bignumIntDivide(int i, int j, bignum *c);
 int seenIn(int val, long long *arr, int size);
+int posSeenIn(int val, long long *arr, int size);
 bool charsSeenIn(char* val, int *arr, int arrsize, int valsize);
 int noCharsSeenIn(char* val, int *arr, int arrsize, int valsize);
 bool equalPairs(orderedPair a, orderedPair b);
@@ -45,5 +46,6 @@ int noDigits(long long x);
 int cmpfunc (const void * a, const void * b);
 unsigned long long reverseNum(long long x);
 bool isPalindrome(long long x);
+int sieve(long long** primes, int n);
 
 #endif
