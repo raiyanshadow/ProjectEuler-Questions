@@ -5,7 +5,6 @@
 
 void makeFigurates(int*** figurateSet, int** sizes);
 bool isCyclical(int a, int b);
-bool cyclicalSet(orderedPair*set, int size);
 bool orderedCyclicalSet(orderedPair *set, int size);
 int missing(orderedPair *set);
 
