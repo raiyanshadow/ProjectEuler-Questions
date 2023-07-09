@@ -210,7 +210,31 @@ int seenIn(int val, long long *arr, int size)
     return 0;
 }
 
+int intSeenIn(int val, int *arr, int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        if (val == arr[i])
+        {
+            return -1;
+        }
+    }
+    return 0;
+}
+
 int posSeenIn(int val, long long *arr, int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        if (val == arr[i])
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+
+int intPosSeenIn(int val, int *arr, int size)
 {
     for (int i = 0; i < size; i++)
     {
@@ -224,7 +248,6 @@ int posSeenIn(int val, long long *arr, int size)
 
 bool charsSeenIn(char* val, int *arr, int arrsize, int valsize)
 {
-    bool flag = true;
     int tmp = 0;
     tmp = valsize;
     int pos = 0;
@@ -259,7 +282,6 @@ bool charsSeenIn(char* val, int *arr, int arrsize, int valsize)
 int noCharsSeenIn(char* val, int *arr, int arrsize, int valsize)
 {
     int ret = 0;
-    bool flag = true;
     int tmp = 0;
     tmp = valsize;
     int pos = 0;
